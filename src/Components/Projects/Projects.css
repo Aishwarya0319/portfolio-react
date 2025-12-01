@@ -1,0 +1,66 @@
+.projects {
+  padding: 48px 0;
+  align-items: center;
+}
+.projects h1 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  align-items: center;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.project-card {
+  background: linear-gradient(106.28%, #df8908 30.41%, #b415ff 90.25%);
+  border: transparent;
+  border-radius: 12px;
+  padding: 16px;
+}
+.project-card h3 {
+  margin: 0 0 8px;
+}
+.project-card .stack {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+.projects-title {
+  position: relative; /* create a positioning context */
+  width: fit-content; /* shrink-wrap to the content */
+  margin: 0 auto 50px;
+  isolation: isolate; /* keep z-index stacking clean */
+}
+
+.projects-title h1 {
+  margin: 0;
+  position: relative;
+  z-index: 2; /* text stays above the blob */
+  line-height: 1.1;
+}
+
+.projects-title .title-blob {
+  position: absolute;
+  left: 70%;
+  top: 45%; /* move up/down under the word */
+  transform: translate(-50%, -50%) rotate(-10deg);
+  width: 120%; /* make blob wider than the word */
+  max-width: 520px; /* optional cap */
+  z-index: 1; /* behind the text */
+  pointer-events: none; /* don't block clicks/selection */
+}
+@media (max-width: 768px) {
+  .projects-title .title-blob {
+    width: 80%;
+    left: 50%;
+    top: 55%;
+  }
+  .projects-title h1 {
+    font-size: 50px;
+    padding: 0px;
+    font-weight: 600;
+  }
+}
